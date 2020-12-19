@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>PurrFect</title>
+    </head>
+    
+    <body>
+        
+        <div class="container">
+        
+            <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %>
+                </div>
+            <% } %>
+        </div>
+       <br>
+        <div class="container ">
+            <div class="text-center mb-1 pb-1" id="title"> <span> <i class="fas fa-paw"></i>Purrfect</span></div> 
+        </div>
+
+            <div class="container">
+                <form action="/signup" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-center m-2" style="font-weight: bolder; text-shadow: 1px 1px 0 violet;" > <i class="fas fa-user" style="color: white;"></i> Create your Account</div>
+                            <div class="form-group">
+                                <label for="exampleInput"> Your username</label>
+                                <input required  type="text" class="form-control" id="exampleInput"  placeholder="Enter username" name="username">
+                                <small id="emailHelp" class="form-text text-muted">Just as your pet, every username should be unique.</small>
+                                
+                              </div>
+                              <div class="form-group">
+                                  <label for="exampleInputEmail1">Email Address</label>
+                                  <input  required type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email">
+                              </div>
+  
+                              <div class="form-group">
+                                  <label for="exampleInputno">Contact Number</label>
+                                  <input  required type="number" class="form-control" id="exampleInputno"  placeholder="Contact Number" name="contact">
+                              </div>
+                              
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input  required type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                                <small id="emailHelp" class="form-text text-muted">You'll be using this username & password for further login.</small>
+                            </div>
+  
+                              <div class="container mx-auto">
+                                  <small class="form-text text-muted text-center">Dont worry! Your details are safe with us. <i class="fas fa-smile"></i></small>
+                                  
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center m-2" style="font-weight: bolder;  text-shadow: 1px 1px 0 violet;" > Pet's Account <i class="fas fa-dog"></i> <i class="fas fa-cat"></i></div>
+                            <div class="form-group">
+                                <label for="exampleInput2"> Your Pet's Name</label>
+                                <input required type="text" class="form-control" id="exampleInput2"  placeholder="Pet's Name" name="petname">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInput3"> Your Pet's Profile Photo <small class="form-text text-muted text-center">We would love to see your pet <i class="fas fa-heart"></i></small></label>
+                                <br>
+                                <input  required type="file" id="image" name="image" accept="image/*">
+                                
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exampleInput4"> Your Pet's Breed</label>
+                                <input  required type="text" class="form-control" id="exampleInput4" placeholder="Pet's Breed" name="breed">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInput5">Describe your Pet</label>
+                                <input  required type="text" class="form-control" id="exampleInput5" placeholder="We bet he/she must be cute :D " name="description">
+                            </div>
+
+                           
+
+                              
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="container text-center">
+                        <button class="btn btn-outline-light bttn" ><i class="fas fa-paw"></i> Sign Up</button>
+                        
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <title>Purrfect</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md fixed-top"id="navBar">
+        
+      <a class="navbar-brand p-1 p-md-2 purrfect" href="/home" style="font-weight: bolder;font-size: 24px;" > <i class="fas fa-paw"></i> Purrfect</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border:1px solid white;">
+        
+        <i class="fas fa-paw" style="color:white;"></i> 
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item disabled">
+            <a class="nav-link d-md-none" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none mt-1 p-1" href="/friends" style="border-bottom: 1px solid black;"><i class="far fa-laugh-beam fa-xs"></i> My Friends</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/profile" style="border-bottom: 1px solid black;"> <i class="fas fa-user fa-xs"></i> My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/aboutus" style="border-bottom: 1px solid black;"> <i class="fas fa-certificate fa-xs"></i> About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/privacy" style="border-bottom: 1px solid black;"> <i class="fas fa-certificate fa-xs"></i> Privacy Policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/logout"><i class="fas fa-sign-out-alt fa-xs"></i> Logout</a>
+          </li>
+        </ul>
+        
+      </div>
+      <div class="ml-auto d-none d-md-block" >
+          <ul class="navbar-nav ml-auto">
+              <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search friend" aria-label="Search" name="search">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+              </form>
+
+              <li class="nav-item m-2">
+                  <a class="nav-link" href="/newpost"><i class="fas fa-plus"></i> POST  </a>
+              </li>
+
+              <li class="nav-item m-2">
+                  <a class="nav-link" href="/profile"> <i class="far fa-user"></i> <%= currentUser.petname %></a>
+              </li>
+          </ul>
+      </div>
+      
+  </nav>
+
+  <nav class="navbar  mt-5 fixed-top d-md-none px-0 "id="navBar2">
+    <div class="container mx-auto">
+      <div class="row d-flex d-flex justify-content-around mx-auto" style="width:100%;">
+          <div class="d-inline-flex">
+                <div class="dropdown">
+                  <div id="dropdownMenuButton" data-toggle="dropdown"  aria-expanded="false" style="border-bottom:2px solid orchid" class="p-1">
+                    <i class="fas fa-paw"></i> Petmate
+                  </div>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="https://www.amazon.in/s?k=cat+and+dog+food&ref=nb_sb_noss" style="font-size: 14px;background-color: black;" class="dropdown-item"><i class="fas fa-circle" style='color:pink'></i>  Pet Food</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;background-color: black;" class="dropdown-item"><i class="fas fa-circle" style='color:lightskyblue'></i>  Pet fashion</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;background-color: black; "class="dropdown-item"><i class="fas fa-circle" style='color:greenyellow'></i> Pet accessories</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Veterinary-Doctors/nct-10519268" style="font-size: 14px;background-color: black;"class="dropdown-item"><i class="fas fa-circle" style='color:orange'></i>  Pet Doctor</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Pet-Shops-For-Dog/nct-10360326" style="font-size: 14px;background-color: black;" class="dropdown-item"> <i class="fas fa-circle" style='color:red'></i>  Pet Stores</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Pet-Grooming-Services/nct-11002277" style="font-size: 14px;background-color: black;" class="dropdown-item"> <i class="fas fa-circle" style='color:plum;'></i>  Pet Spa</a>
+                      <hr style="margin:1px;">
+                  </div>
+                </div>
+          </div>
+          <a href="/newpost"style="border-bottom:2px solid orchid" class="p-1" >  <i class="fas fa-plus"></i> POST  </a>
+          <form class="form-inline" method="GET" action="/search">
+            <input type="search" placeholder="Search friend" style="width: 90px;"name="search" >
+            <button type="submit" class="btn btn-info" style="padding:1px"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    </nav>
+
+    <div class="container mt-3 pt-5">
+        <div >
+          <div class="text-center p-3 petmate">
+            Your friends <i class="fas fa-paw"></i> 
+          </div>
+          <hr style="height:3px">
+          <% if(currentUser.friends.length>0){%>
+            <%currentUser.friends.forEach(function(friend){ %>
+              <div class="container p-2" style="box-shadow: 0 0 4px plum;">
+                <div class="row">
+                    <div class="col-3">
+                      <img src="<%= friend.image %>" alt="" style="height:50px; width:55px;">
+                    </div>
+                    <div class="col-4">
+                      <a href="/petprofile/<%=friend._id%>/view" style="color:black;" > <%= friend.petname %> </a>
+                    </div>
+                    <div class="col-5">
+                      
+                      <a href="#" class="btn btn-outline-success px-4 pt-1 mt-2" style="text-decoration:none;font-size: 14px;" > Chat</a>
+                    </div> 
+                  </div> 
+              </div>
+            <% }); %>
+         <%}else{%>
+           <p class="text-center"> You have no friends yet <i class="far fa-meh"></i></p>
+           <small class="text-muted text-center m-2"> Go to the search bar to search for friend </small>
+         <%}%>
+          
+          
+        </div>
+
+
+    
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="/javascript/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Purrfect</title>
+  </head>
+  <body>
+    
+    
+        
+    <nav class="navbar navbar-expand-md fixed-top"id="navBar">
+        
+      <a class="navbar-brand p-1 p-md-2 purrfect" href="/home" style="font-weight: bolder;font-size: 24px;" > <i class="fas fa-paw"></i> Purrfect</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border:1px solid white;">
+        
+        <i class="fas fa-paw" style="color:white;"></i> 
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item disabled">
+            <a class="nav-link d-md-none" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none mt-1 p-1" href="/friends" style="border-bottom: 1px solid black;"><i class="far fa-laugh-beam fa-xs"></i> My Friends</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/profile" style="border-bottom: 1px solid black;"> <i class="fas fa-user fa-xs"></i> My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/aboutus" style="border-bottom: 1px solid black;"> <i class="fas fa-certificate fa-xs"></i> About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/privacy" style="border-bottom: 1px solid black;"> <i class="fas fa-certificate fa-xs"></i> Privacy Policy</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/logout"><i class="fas fa-sign-out-alt fa-xs"></i> Logout</a>
+          </li>
+        </ul>
+        
+      </div>
+      <div class="ml-auto d-none d-md-block" >
+          <ul class="navbar-nav ml-auto">
+              <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search friend" aria-label="Search" name="search">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+              </form>
+              <li class="nav-item m-2">
+                <a class="nav-link" href="/newpost"><i class="fas fa-plus"></i> POST  </a>
+            </li>
+
+              <li class="nav-item m-2">
+                  <a class="nav-link" href="/profile"> <i class="far fa-user"></i> <%= currentUser.petname %></a>
+              </li>
+          </ul>
+      </div>
+      
+  </nav>
+
+  <nav class="navbar  mt-5 fixed-top d-md-none px-0 "id="navBar2">
+    <div class="container mx-auto">
+      <div class="row d-flex d-flex justify-content-around mx-auto" style="width:100%;">
+          <div class="d-inline-flex">
+                <div class="dropdown">
+                  <div id="dropdownMenuButton" data-toggle="dropdown"  aria-expanded="false" style="border-bottom:2px solid orchid" class="p-1">
+                    <i class="fas fa-paw"></i> Petmate
+                  </div>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="https://www.amazon.in/s?k=cat+and+dog+food&ref=nb_sb_noss" style="font-size: 14px;background-color: black;" class="dropdown-item"><i class="fas fa-circle" style='color:pink'></i>  Pet Food</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;background-color: black;" class="dropdown-item"><i class="fas fa-circle" style='color:lightskyblue'></i>  Pet fashion</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;background-color: black; "class="dropdown-item"><i class="fas fa-circle" style='color:greenyellow'></i> Pet accessories</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Veterinary-Doctors/nct-10519268" style="font-size: 14px;background-color: black;"class="dropdown-item"><i class="fas fa-circle" style='color:orange'></i>  Pet Doctor</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Pet-Shops-For-Dog/nct-10360326" style="font-size: 14px;background-color: black;" class="dropdown-item"> <i class="fas fa-circle" style='color:red'></i>  Pet Stores</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Pet-Grooming-Services/nct-11002277" style="font-size: 14px;background-color: black;" class="dropdown-item"> <i class="fas fa-circle" style='color:plum;'></i>  Pet Spa</a>
+                      <hr style="margin:1px;">
+                  </div>
+                </div>
+          </div>
+          <a href="/newpost" style="border-bottom:2px solid orchid" class="p-1" >  <i class="fas fa-plus"></i> POST  </a>
+          <form class="form-inline" method="GET" action="/search">
+              <input type="search" placeholder="Search friend" style="width: 90px;"name="search" >
+              <button type="submit" class="btn btn-info" style="padding:1px"><i class="fas fa-search"></i></button>
+          </form>
+          
+      </div>
+    </div>
+      
+        
+    </nav>
+ 
+ 
+  
+
+ 
+<div class='container  mt-5 pt-5'>
+  <div class="row">
+      <div class='col-md-2 d-none d-md-block'>
+          <div class="sidenav ">
+              <div class="text-center p-3 petmate">
+                Your PetMate <i class="fas fa-paw"></i> 
+              </div>
+              <hr style="margin:3px;">
+              <a href="https://www.amazon.in/s?k=cat+and+dog+food&ref=nb_sb_noss" style="font-size: 14px;"><i class="fas fa-circle" style='color:pink'></i>  Pet Food</a>
+              <hr style="margin:3px;">
+              <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;"><i class="fas fa-circle" style='color:lightskyblue'></i>  Pet fashion</a>
+              <hr style="margin:3px;">
+              <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;"><i class="fas fa-circle" style='color:greenyellow'></i> Pet accessories</a>
+              <hr style="margin:3px;">
+              <a href="https://www.justdial.com/Mumbai/Veterinary-Doctors/nct-10519268" style="font-size: 14px;"><i class="fas fa-circle" style='color:orange'></i>  Pet Doctor</a>
+              <hr style="margin:3px;">
+              <a href="https://www.justdial.com/Mumbai/Pet-Shops-For-Dog/nct-10360326" style="font-size: 14px;" > <i class="fas fa-circle" style='color:red'></i>  Pet Stores</a>
+              <hr style="margin:3px;">
+              <a href="https://www.justdial.com/Mumbai/Pet-Grooming-Services/nct-11002277" style="font-size: 14px;" > <i class="fas fa-circle" style='color:plum;'></i>  Pet Spa</a>
+              <hr style="margin:3px;">
+             
+              
+              <br>
+              <br>
+              <div class="text-muted text-center">~ with Love <i class="fas fa-heart"></i></div>
+              <div class="text-muted text-center">Purrfect <i class="fas fa-paw"></i> </div>
+              <div class="container mt-3" style="border-radius: 20px; border-top: 1px solid lightgray; ">
+                <a href="/aboutus" style="font-size: 12px; font-weight: bolder;" > <i class="fas fa-certificate"></i> About Us</a>
+                <a href="/privacy"  style="font-size: 12px;font-weight: bolder;"><i class="fas fa-certificate"></i> Privacy Policy</a>
+                <a href="/logout"  style="font-size: 12px;font-weight: bolder;"><i class="fas fa-certificate"></i> Logout</a>
+              </div>
+             
+          </div>
+      </div>
+      <div class="col-12 col-md-8 ">
+          <div class=" m-0 p-0 mx-md-2 p-md-2">
+              <% var a =0 %>
+              <% posts.forEach(function(post){  %>
+                <p> <% a++ %></p>
+                <div class="row">
+                  <div class="col-md-2">
+
+                  </div>
+                  <div class="col-12 col-md-8 m-0">
+                    <section id="<%= post._id%>">
+                      
+                      <div class="card" style="width:100%;height:auto;margin: 0;padding: 0;">
+                        <div class="row p-3">
+                          <div class="col-3">
+                            <img src="<%= post.iconimage %>" alt="" style="width:100%;height:40px;">
+                          </div>
+                          <div col="col-9">
+                            <a  class="m-0 p-0"  id="xyz" href="/petprofile/<%=post.authorid%>/view"> <%= post.petname %> </a>
+                            <br>
+                            <small class="text-muted my-0"> <i class="fas fa-clock"></i> <%= moment(post.createdOn).fromNow() %></small>
+                          </div>
+                        </div>
+                       
+                        
+                        <div class="pl-3 py-md-3 pb-1"><i class="fas fa-paw"></i> <%= post.caption %> </div>
+                          <img class="card-img-top mb-2 postimg" src="<%= post.image %>" alt="Card image cap">
+                         
+                        
+                  
+          
+                 
+                    <% var item = currentUser._id%>
+                    <% var index = post.likedby.indexOf(item); %>
+                    <% if(index === -1){ %>
+                      <form action="/post/<%= post._id%>/like?_method=PUT" method="POST" class="container">
+                        <button  class="btn btn-outline-danger likebutton my-2 px-1 py-0">Like <i class="fas fa-heart "></i></button>
+                        <a style="float:right" class="pt-2 mb-0" href="#" id="commentpage" data-toggle="modal" data-target="#<%= a %>"><%= post.comments.length %> <i class="fas fa-comments fa-lg" style="color: black;"></i></a>
+                        <span style="float:right" class="pr-5 pt-2 mb-0"><%= post.likes %> <i class="fab fa-gratipay fa-lg " style="color: red;"></i></span>
+                      </form>
+                    <%}else{ %>
+                      <div class="container">
+                        <button  class="btn btn-danger  my-2 px-1 py-0">Liked <i class="fas fa-heart "></i></button>
+                      <a style="float:right" class="pt-2 mb-0" href="#" id="commentpage" data-toggle="modal" data-target="#<%= a %>"><%= post.comments.length %> <i class="fas fa-comments fa-lg" style="color: black;"></i></a>
+                      <span style="float:right" class="pr-5 pt-2 mb-0"><%= post.likes %> <i class="fab fa-gratipay fa-lg " style="color: red;"></i></span>
+                      </div>
+                      
+                    <% } %>
+                      
+                      
+    
+                  <div class="modal fade" id="<%= a %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <% post.comments.forEach(function(comment){ %>
+              <span  class="mr-5" style="text-shadow: 1px 2px 0px  cyan;text-transform: capitalize;">
+                <i class="fas fa-user-alt"></i> <em> <%= comment.author %> </em>
+              </span>
+             
+              <span class="pull-right text-muted px-1" style=" font-size: 10px;;"> <i class="fas fa-history"></i> <%= moment(comment.createdOn).fromNow() %></span>
+              
+              <div>
+                <i class="fas fa-circle fa-xs px-2" style="text-shadow: 1px 2px 0px  cyan;"></i>
+                <%= comment.text %>
+              </div>
+              <hr>
+            <% })  %>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+                  
+    
+                  <form action="/post/<%= post._id%>/newcomment/<%= currentUser._id %>" method="POST" class="p-2">
+                      <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Add your comment" aria-label="Recipient's username" aria-describedby="basic-addon2" name="comment">
+                          <div class="input-group-append">
+                            <button class="input-group-text" id="basic-addon2">ADD</button>
+                          </div>
+                        </div>
+                        <div class="input-group d-none">
+                          <input type="text" class="form-control" placeholder="Add your comment" aria-label="Recipient's username" aria-describedby="basic-addon2" name="author" value="<%= currentUser.petname %>">
+                          <div class="input-group-append">
+                            <button class="input-group-text" id="basic-addon2">ADD</button>
+                          </div>
+                        </div>
+                  </form>
+                  </section>
+                  </div>
+                  <div class="col-2" ></div>
+                </div>
+                <br>
+              <% }) %>
+              </div>
+      </div>
+      <div class='col-md-2 d-none d-md-block'>
+          <div class="sidenavright">
+              <div class="text-center p-3 petmate">
+                Your friends <i class="fas fa-paw"></i> 
+              </div>
+      
+              <hr style="height:3px">
+              <% if(currentUser.friends.length>0){%>
+                <%currentUser.friends.forEach(function(friend){ %>
+                  <div class="container p-2" style="box-shadow: 0 0 4px plum;">
+                    <div class="row">
+                      <div class="col-3">
+                        <img src="<%= friend.image %>" alt="" style="height:50px; width:55px;">
+                      </div>
+                      <div class="col-4">
+                        <a href="/petprofile/<%=friend._id%>/view" > <%= friend.petname %> </a>
+                      </div>
+                      <div class="col-5">
+                        
+                        <a href="#" class="btn btn-outline-success btn-sm p-0 mt-2" style="text-decoration:none;font-size: 14px;" > Chat</a>
+                      </div> 
+                    </div>
+                    
+                    
+                    
+                  </div>
+                  <hr style="height:3px;color:white;margin: 0;">
+                <% }); %>
+             <%}else{%>
+               <p class="text-center"> You have no friends yet <i class="far fa-meh"></i></p>
+               <small class="text-muted text-center m-2"> Go to the search bar to search for friend </small>
+             <%}%>
+              
+              <br>
+              <br>
+              <br>
+              
+            </div>
+      </div>
+  </div>
+</div>
+  
+  
+  
+
+  
+  
+    
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+ 
+  
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/javascript/home.js"></script>
+</body>
+</html>

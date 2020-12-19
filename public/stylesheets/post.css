@@ -1,0 +1,20 @@
+#head{
+    font-family: 'Bad Script', cursive;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+#subhead{
+    font-family: 'Bad Script', cursive;
+    font-size: 14px;
+    font-weight: bold;
+}
+@media screen and(max-width:767px)
+    {
+      body{
+        font-size: 16px;
+      }
+      #head{
+        font-size: 20px; 
+      }
+    }

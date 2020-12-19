@@ -1,0 +1,52 @@
+#head{
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Bad Script', cursive;
+    letter-spacing: 4px;
+   
+}
+#profilephoto{
+    width:70%;
+    height:300px; 
+    border: 2px solid black;
+    box-shadow: 0px 0px 30px gray;
+}
+@media screen and (max-width:767px)
+{
+    #profilephoto{
+        height:200px;
+    }
+    
+}
+
+#details{
+    background-color:white;
+    color:black;
+    font-family: 'Great Vibes', cursive;
+}
+#HR{
+    margin: 0;
+    color: black;
+}
+#postinfo{
+    text-decoration: none;
+    color: black;
+}
+
+#postinfo:hover{
+    font-weight: bold;
+}
+#hrb{
+    height: 5px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+
+.fa-heart{
+    color: red;
+}
+
+em{
+    font-weight: bold;
+}

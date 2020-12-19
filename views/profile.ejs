@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Courgette&family=Playball&family=Raleway&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Cookie&display=swap" rel="stylesheet">
+    <title>Purrfect</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md fixed-top"id="navBar">
+        
+      <a class="navbar-brand p-1 p-md-2 purrfect" href="/home" style="font-weight: bolder;font-size: 24px;" > <i class="fas fa-paw"></i> Purrfect</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border:1px solid white;">
+        
+        <i class="fas fa-paw" style="color:white;"></i> 
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item disabled">
+            <a class="nav-link d-md-none" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none mt-1 p-1" href="/friends" style="border-bottom: 1px solid black;"><i class="far fa-laugh-beam fa-xs"></i> My Friends</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/profile" style="border-bottom: 1px solid black;"> <i class="fas fa-user fa-xs"></i> My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/aboutus" style="border-bottom: 1px solid black;"> <i class="fas fa-certificate fa-xs"></i> About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/privacy" style="border-bottom: 1px solid black;"> <i class="fas fa-certificate fa-xs"></i> Privacy Policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none p-1" href="/logout"><i class="fas fa-sign-out-alt fa-xs"></i> Logout</a>
+          </li>
+        </ul>
+        
+      </div>
+      <div class="ml-auto d-none d-md-block" >
+          <ul class="navbar-nav ml-auto">
+              <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search friend" aria-label="Search" name="search">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+              </form>
+
+              <li class="nav-item m-2">
+                  <a class="nav-link" href="/newpost"><i class="fas fa-plus"></i> POST  </a>
+              </li>
+
+              <li class="nav-item m-2">
+                  <a class="nav-link" href="/profile" style="border-bottom:2px solid white;"> <i class="far fa-user"></i> <%= currentUser.petname %></a>
+              </li>
+          </ul>
+      </div>
+      
+  </nav>
+
+  <nav class="navbar  mt-5 fixed-top d-md-none px-0 "id="navBar2">
+    <div class="container mx-auto">
+      <div class="row d-flex d-flex justify-content-around mx-auto" style="width:100%;">
+          <div class="d-inline-flex">
+                <div class="dropdown">
+                  <div id="dropdownMenuButton" data-toggle="dropdown"  aria-expanded="false" style="border-bottom:2px solid orchid" class="p-1">
+                    <i class="fas fa-paw"></i> Petmate
+                  </div>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="https://www.amazon.in/s?k=cat+and+dog+food&ref=nb_sb_noss" style="font-size: 14px;background-color: black;" class="dropdown-item"><i class="fas fa-circle" style='color:pink'></i>  Pet Food</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;background-color: black;" class="dropdown-item"><i class="fas fa-circle" style='color:lightskyblue'></i>  Pet fashion</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;background-color: black; "class="dropdown-item"><i class="fas fa-circle" style='color:greenyellow'></i> Pet accessories</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Veterinary-Doctors/nct-10519268" style="font-size: 14px;background-color: black;"class="dropdown-item"><i class="fas fa-circle" style='color:orange'></i>  Pet Doctor</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Pet-Shops-For-Dog/nct-10360326" style="font-size: 14px;background-color: black;" class="dropdown-item"> <i class="fas fa-circle" style='color:red'></i>  Pet Stores</a>
+                      <hr style="margin:1px;">
+                      <a href="https://www.justdial.com/Mumbai/Pet-Grooming-Services/nct-11002277" style="font-size: 14px;background-color: black;" class="dropdown-item"> <i class="fas fa-circle" style='color:plum;'></i>  Pet Spa</a>
+                      <hr style="margin:1px;">
+                  </div>
+                </div>
+          </div>
+          <a href="/newpost"style="border-bottom:2px solid orchid" class="p-1" >  <i class="fas fa-plus"></i> POST  </a>
+          <form class="form-inline" method="GET" action="/search">
+            <input type="search" placeholder="Search friend" style="width: 90px;"name="search" >
+            <button type="submit" class="btn btn-info" style="padding:1px"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+      
+        
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="text-center" id="head">This is ME!!</div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6 ">
+                <div class="container" id="details">
+                    <br>
+                    
+
+                    <div class="pt-2 mb-1" style="font-family: 'Great Vibes', cursive;"> Heyyyy Buddyyy <i class="fas fa-hand-peace"></i></div>
+                    
+                    <hr>
+                    <div class="pt-2 mb-1">  I am  <em> <%= currentUser.petname %> </em></div>
+                    <hr>        
+                    <div class="pt-2 mb-1"> I am a <em><%= currentUser.breed %></em> </div>
+                    <hr>
+                    <div class="text-muted"> Wanna know more about me? This is what my Owner says about me!</div>
+                    <div class="pt-2 mb-1"> <%= currentUser.description %></div>
+                    <br>
+                    
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center">
+                    <div class="mb-3"> Ain't I adorbale? <i class="fas fa-heart"></i>  <i class="fas fa-heart"></i></div>
+                    <img src="<%= currentUser.image %>" 
+                    alt=""  id="profilephoto">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="text-center" style="font-size: 20px;font-weight: bolder;"> My Posts: </div>
+            <hr>
+            
+                <% if(posts.length===0){ %>
+                    <div class="text-center text-muted" style="color: black;">No posts till now</div>
+                
+                 <% }else { %>
+                    <% var a = 1 %>
+                    <% var  b=10 %>
+                    <div class='row'>
+                        <% posts.forEach(function(post){ %>
+                            <% if(String(post.authorid)===String(currentUser._id)){ %>
+                                <% a++%>
+                                <% b++%>
+                                <div class=" col-sm-6 col-md-3  mb-3">
+                                    <div class="card" style="box-shadow: 0px 0px 20px black;" >
+                                        <img class="card-img-top " src="<%= post.image %>" alt="Card image cap" style="max-height:200px;width:100%;border-bottom: 2px solid black;" >
+                                        
+                                        <div class="container">
+                                          <span class="mx-5"><%= post.likes %> <i class="fab fa-gratipay " style="color: red;"></i></span>
+                                          <a  data-toggle="modal" data-target="#<%= a %>" href="#" style="color:black"><%= post.comments.length %> <i class="fas fa-comments"></i></a>
+                                            
+                                          <div class="modal fade" id="<%= a %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <% post.comments.forEach(function(comment){ %>
+                                                    <span  class="mr-5" style="text-shadow: 1px 2px 0px  cyan;text-transform: capitalize;">
+                                                      <i class="fas fa-user-alt"></i> <em> <%= comment.author %> </em>
+                                                    </span>
+                                                   
+                                                    <span class="pull-right text-muted px-1" style=" font-size: 10px;;"> <i class="fas fa-history"></i> <%= moment(comment.createdOn).fromNow() %></span>
+                                                    
+                                                    <div>
+                                                      <i class="fas fa-circle fa-xs px-2" style="text-shadow: 1px 2px 0px  cyan;"></i>
+                                                      <%= comment.text %>
+                                                    </div>
+                                                    <hr>
+                                                  <% })  %>
+                                                </div>
+                                                
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                        </div>
+                                        <hr id="HR">
+                                        <a class="text-center" id="postinfo" data-toggle="modal" data-target="#<%= b %>"><i class="fas fa-paw" style="color:blueviolet"></i> More Info!</a>
+                                        <!-- Modal -->
+<div class="modal fade" id="<%= b %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">My Post</h5>
+          <small class="text-muted text-center ml-4"> <i class="fas fa-clock"></i> <%= moment(post.createdOn).fromNow() %></small>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="card" >
+                <img class="card-img-top" src="<%= post.image %>" alt="Card image cap">
+                <div class="card-body">
+                  <p><i class="fas fa-paw" ></i><%= post.caption %></p>
+                  
+                  <div class="container">
+                    <span class="mx-5"><%= post.likes %> <i class="fab fa-gratipay " style="color: red;"> Likes</i></span>
+                    <span ><%= post.comments.length %> <i class="fas fa-comments">Comments</i></span>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                         <%}) %>
+                    </div>
+                    
+                 <% } %>
+                
+                    
+                   
+            </div>
+        </div>
+        <hr id="hrb" class="mx-5 px-5">
+        
+        <div class="text-center">
+            <a href="/logout" class="text-center btn btn-lg btn-info"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            <br>
+            <br>
+        </div>
+    </div> 
+
+    
+
+
+
+
+
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

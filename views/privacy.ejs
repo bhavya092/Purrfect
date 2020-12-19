@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Courgette&family=Playball&family=Raleway&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Cookie&display=swap" rel="stylesheet">
+    <title>Purrfect</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md fixed-top"id="navBar">
+        
+        <a class="navbar-brand p-1 p-md-2 purrfect" href="/home" style="font-weight: bolder;font-size: 24px;" > <i class="fas fa-paw"></i> Purrfect</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border:1px solid white;">
+          
+          <i class="fas fa-paw" style="color:white;"></i> 
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item disabled">
+              <a class="nav-link d-md-none" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-md-none mt-1 p-1" href="/friends" style="border-bottom: 1px solid black;"><i class="far fa-laugh-beam fa-xs"></i> My Friends</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-md-none p-1" href="/profile" style="border-bottom: 1px solid black;"> <i class="fas fa-user fa-xs"></i> My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-md-none p-1" href="/aboutus" style="border-bottom: 1px solid black;"> <i class="fas fa-certificate fa-xs"></i> About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-md-none p-1" href="/privacy" style="border-bottom: 1px solid black;"> <i class="fas fa-certificate fa-xs"></i> Privacy Policy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-md-none p-1" href="/logout"><i class="fas fa-sign-out-alt fa-xs"></i> Logout</a>
+            </li>
+          </ul>
+          
+        </div>
+        <div class="ml-auto d-none d-md-block" >
+            <ul class="navbar-nav ml-auto">
+                <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search friend" aria-label="Search" name="search">
+                  <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </form>
+  
+                <li class="nav-item m-2">
+                    <a class="nav-link" href="/newpost"><i class="fas fa-plus"></i> POST  </a>
+                </li>
+  
+                <li class="nav-item m-2">
+                    <a class="nav-link" href="/profile"> <i class="far fa-user"></i> <%= currentUser.petname %></a>
+                </li>
+            </ul>
+        </div>
+        
+    </nav>
+  
+    <nav class="navbar  mt-5 fixed-top d-md-none px-0 "id="navBar2">
+      <div class="container mx-auto">
+        <div class="row d-flex d-flex justify-content-around mx-auto" style="width:100%;">
+            <div class="d-inline-flex">
+                  <div class="dropdown">
+                    <div id="dropdownMenuButton" data-toggle="dropdown"  aria-expanded="false" style="border-bottom:2px solid orchid" class="p-1">
+                      <i class="fas fa-paw"></i> Petmate
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a href="https://www.amazon.in/s?k=cat+and+dog+food&ref=nb_sb_noss" style="font-size: 14px;background-color: black;" class="dropdown-item"><i class="fas fa-circle" style='color:pink'></i>  Pet Food</a>
+                        <hr style="margin:1px;">
+                        <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;background-color: black;" class="dropdown-item"><i class="fas fa-circle" style='color:lightskyblue'></i>  Pet fashion</a>
+                        <hr style="margin:1px;">
+                        <a href="https://www.chewy.com/b/clothing-accessories-2277" style="font-size: 14px;background-color: black; "class="dropdown-item"><i class="fas fa-circle" style='color:greenyellow'></i> Pet accessories</a>
+                        <hr style="margin:1px;">
+                        <a href="https://www.justdial.com/Mumbai/Veterinary-Doctors/nct-10519268" style="font-size: 14px;background-color: black;"class="dropdown-item"><i class="fas fa-circle" style='color:orange'></i>  Pet Doctor</a>
+                        <hr style="margin:1px;">
+                        <a href="https://www.justdial.com/Mumbai/Pet-Shops-For-Dog/nct-10360326" style="font-size: 14px;background-color: black;" class="dropdown-item"> <i class="fas fa-circle" style='color:red'></i>  Pet Stores</a>
+                        <hr style="margin:1px;">
+                        <a href="https://www.justdial.com/Mumbai/Pet-Grooming-Services/nct-11002277" style="font-size: 14px;background-color: black;" class="dropdown-item"> <i class="fas fa-circle" style='color:plum;'></i>  Pet Spa</a>
+                        <hr style="margin:1px;">
+                    </div>
+                  </div>
+            </div>
+            <a href="/newpost" style="border-bottom:2px solid orchid" class="p-1" >  <i class="fas fa-plus"></i> POST  </a>
+            <form class="form-inline" method="GET" action="/search">
+                <input type="search" placeholder="Search friend" style="width: 90px;"name="search" >
+                <button type="submit" class="btn btn-info" style="padding:1px"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+      </div>
+      </nav>
+      <div class = "container my-5 border shadow-lg px-5 pb-5">
+        <h3 class = "mt-3 pl-3 pb-3 pt-3 display-3 text-center">Privacy Policy</h3>
+        <hr>
+        <ul class="pl-3">
+            <li>
+                <p> 
+                    Your privacy is important to us. It is Purrfect's policy to respect your privacy regarding any information we may
+                    collect from you across our website, <a href="https://purrfectmatch.herokuapp.com">https://purrfectmatch.herokuapp.com</a>, and other sites we own and
+                    operate.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and
+                    lawful means, with your knowledge and consent. We also let you know why we're collecting it and how it will be
+                    used.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We only retain collected information for as long as necessary to provide you with your requested service. What data
+                    we store, we'll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized
+                    access, disclosure, copying, use or modification.</p>
+            </li>
+            <li>
+                <p>
+                    We don't share any personally identifying information publicly or with third-parties, except when required to by
+                    law.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Our website may link to external sites that are not operated by us. Please be aware that we have no control over the
+                    content and practices of these sites, and cannot accept responsibility or liability for their respective privacy
+                    policies.</p>
+            </li>
+            <li>
+                <p>
+                    You are free to refuse our request for your personal information, with the understanding that we may be unable to
+                    provide you with some of your desired services.</p>
+            </li>
+            <li>
+                <p> 
+                    Your continued use of our website will be regarded as acceptance of our practices around privacy and personal
+                    information. If you have any questions about how we handle user data and personal information, feel free to contact
+                    us.</p>
+            </li>
+            <li>
+                You choose to give us certain information when using our services. This includes:
+                <li class = "ml-4 mt-3">
+                    <p>
+                        When you create an account, you provide us with at least your login credentials, as well as some basic details necessary
+                        for the service to work.
+                    </p>
+                </li>
+                
+                
+                <li class = "ml-4 mt-3">
+                    <p>
+                        If you contact our customer care team, we collect the information you give us during the interaction. Sometimes, we
+                        monitor or record these interactions for training purposes and to ensure a high quality of service.
+                    </p>
+                </li>
+                
+                <li class = "ml-4 mt-3">
+                    <p>
+                        If you ask us to communicate with or otherwise process information of other people (for example, if you ask us to send
+                        an email on your behalf to one of your friends), we collect the information about others that you give us in order to
+                        complete your request.
+                    </p>
+                </li>
+                
+                <li class = "ml-4 mt-3">
+                    <p>
+                        Of course, we also process your chats with other users as well as the content you publish, as part of the operation of
+                        the services.
+                    </p>
+                </li>
+            </li>
+            <li>
+                <p>
+                    This policy is effective as of 3 August 2020.
+                    <small class="d-block mb-3 text-muted footer-content ml-5 mt-3">&copy; Purrfect 2020</small>
+                </p>
+            </li>
+        </ul>       
+    </div>
+
+    <div class="container px-5 pt-5 mt-5 d-none">
+        
+        <div class="container my-5 border shadow-lg px-5 pb-5">
+            <h3 class="mt-3 pl-3 pb-3 pt-3 display-3 text-center">Privacy Policy</h3>
+            <hr>
+            <ul class="pl-3">
+                <li>
+                    <p> 
+                        Your privacy is important to us. It is Purrfect's policy to respect your privacy regarding any information we may
+                        collect from you across our website, <a href="https://purrfectmatch.herokuapp.com">https://purrfectmatch.herokuapp.com</a>, and other sites we own and
+                        operate.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and
+                        lawful means, with your knowledge and consent. We also let you know why we're collecting it and how it will be
+                        used.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        We only retain collected information for as long as necessary to provide you with your requested service. What data
+                        we store, we'll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized
+                        access, disclosure, copying, use or modification.</p>
+                </li>
+                <li>
+                    <p>
+                        We don't share any personally identifying information publicly or with third-parties, except when required to by
+                        law.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Our website may link to external sites that are not operated by us. Please be aware that we have no control over the
+                        content and practices of these sites, and cannot accept responsibility or liability for their respective privacy
+                        policies.</p>
+                </li>
+                <li>
+                    <p>
+                        You are free to refuse our request for your personal information, with the understanding that we may be unable to
+                        provide you with some of your desired services.</p>
+                </li>
+                <li>
+                    <p> 
+                        Your continued use of our website will be regarded as acceptance of our practices around privacy and personal
+                        information. If you have any questions about how we handle user data and personal information, feel free to contact
+                        us.</p>
+                </li>
+                <li>
+                    You choose to give us certain information when using our services. This includes:
+                    </li><li class="ml-4 mt-3">
+                        <p>
+                            When you create an account, you provide us with at least your login credentials, as well as some basic details necessary
+                            for the service to work, such as your email and contact number.
+                        </p>
+                    </li>
+                    
+                    <li class="ml-4 mt-3">
+                        <p>
+                            When you complete your profile, you can share with us additional information, such as details on your personality,
+                            lifestyle, interests and other details about you, as well as content such as photos and videos. To add certain content,
+                            like pictures or videos, you may allow us to access your camera or photo album. Some of the information you choose to
+                            provide us may be considered “special” or “sensitive” in certain jurisdictions, for example your racial or ethnic
+                            origins, sexual orientation and religious beliefs. By choosing to provide this information, you consent to our
+                            processing of that information.
+                        </p>
+                    </li>
+                    
+                    <li class="ml-4 mt-3">
+                        <p>
+                            If you contact our customer care team, we collect the information you give us during the interaction. Sometimes, we
+                            monitor or record these interactions for training purposes and to ensure a high quality of service.
+                        </p>
+                    </li>
+                    
+                    <li class="ml-4 mt-3">
+                        <p>
+                            If you ask us to communicate with or otherwise process information of other people (for example, if you ask us to send
+                            an email on your behalf to one of your friends), we collect the information about others that you give us in order to
+                            complete your request.
+                        </p>
+                    </li>
+                    
+                    <li class="ml-4 mt-3">
+                        <p>
+                            Of course, we also process your chats with other users as well as the content you publish, as part of the operation of
+                            the services.
+                        </p>
+                    </li>
+                
+                <li>
+                    <p>
+                        This policy is effective as of 3 August 2020.
+                    </p>
+                </li>
+            </ul>       
+        </div>
+     </div>
+
+
+
+    
+
+
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
